@@ -1,25 +1,37 @@
+using System.IO;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace TestPloomes.Api
 {
+  /// <summary>
+  /// Configurador do programa
+  /// </summary>
   public class Program
   {
+    /// <summary>
+    /// Ponto de entrada
+    /// </summary>
+    /// <param name="args">Argumentos da linha de comando</param>
     public static void Main(string[] args)
     {
-      CreateHostBuilder(args).Build().Run();
+      BuildWebHost(args).Run();
     }
-
-    public static IHostBuilder CreateHostBuilder(string[] args) =>
-        Host.CreateDefaultBuilder(args)
-            .ConfigureWebHostDefaults(webBuilder =>
+    /// <summary>
+    /// Configurador do servidor Web
+    /// </summary>
+    /// <param name="args">Argumentos da linha de comando</param>
+    /// <returns></returns>
+    public static IWebHost BuildWebHost(string[] args) =>
+        WebHost.CreateDefaultBuilder(args)
+           .UseUrls("http://0.0.0.0:5000/")
+            .UseContentRoot(Directory.GetCurrentDirectory())
+            .UseIISIntegration()
+            .ConfigureKestrel(serverOptions =>
             {
-              webBuilder.UseStartup<Startup>();
-            });
+              // Set properties and call methods on options
+            })
+            .UseStartup<Startup>()
+            .Build();
   }
 }
