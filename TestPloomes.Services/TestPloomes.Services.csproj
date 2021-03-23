@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestPloomes.Core\TestPloomes.Core.csproj" />
+    <ProjectReference Include="..\TestPloomes.Data\TestPloomes.Data.csproj" />
+    <ProjectReference Include="..\TestPloomes.Views\TestPloomes.Views.csproj" />
+    <ProjectReference Include="..\Tools\Tools.csproj" />
+  </ItemGroup>
+
+</Project>

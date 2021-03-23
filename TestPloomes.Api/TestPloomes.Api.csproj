@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>0eb3e0db-10ce-47f5-ba0b-8e2b661d4a67</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\testploomes\TestPloomes\TestPloomes.Api\TestPloomes.Api.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestPloomes.Core\TestPloomes.Core.csproj" />
+    <ProjectReference Include="..\TestPloomes.Data\TestPloomes.Data.csproj" />
+    <ProjectReference Include="..\TestPloomes.Services\TestPloomes.Services.csproj" />
+    <ProjectReference Include="..\TestPloomes.Views\TestPloomes.Views.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="TestPloomes.Api.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
+</Project>

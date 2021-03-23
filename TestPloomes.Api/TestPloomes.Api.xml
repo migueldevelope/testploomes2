@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestPloomes.Api</name>
+    </assembly>
+    <members>
+        <member name="T:TestPlooms.Api.Controllers.AuthController">
+            <summary>
+            Controller authentication
+            </summary>
+        </member>
+        <member name="M:TestPlooms.Api.Controllers.AuthController.#ctor(TestPloomes.Core.Interfaces.IServiceAuthentication,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Construtor controller
+            </summary>
+            <param name="_service">Service authentication</param>
+            <param name="contextAccessor">Token infomartion</param>
+        </member>
+        <member name="M:TestPlooms.Api.Controllers.AuthController.Auth(TestPloomes.Views.BusinessCrud.ViewAuthentication)">
+            <summary>
+            Authentication User
+            </summary>
+            <param name="view">View authentication</param>
+            <response code="200">Return authentication</response>
+            <response code="400">Return error code:<br />
+            AUTHENTICATION01 - Mail invalid.<br />
+            AUTHENTICATION02 - Password invalid.</response>
+        </member>
+        <member name="T:TestPlooms.Api.Controllers.HQController">
+            <summary>
+            Controller HQ
+            </summary>
+        </member>
+        <member name="M:TestPlooms.Api.Controllers.HQController.#ctor(TestPloomes.Core.Interfaces.IServiceHQ,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Construtor controller
+            </summary>
+            <param name="_service">Service HQ</param>
+            <param name="contextAccessor">Token infomartion</param>
+        </member>
+        <member name="M:TestPlooms.Api.Controllers.HQController.New(TestPloomes.Views.BusinessCrud.ViewCrudHQ)">
+            <summary>
+            New HQ
+            </summary>
+            <param name="view">View HQ</param>
+            <response code="200">Return message: 
+            HQ04 - New HQ success.</response>
+            <response code="400">Return error code:<br />
+            HQ02 - Name invalid.<br />
+            HQ03 - Company invalid.</response>
+        </member>
+        <member name="M:TestPlooms.Api.Controllers.HQController.Update(TestPloomes.Views.BusinessCrud.ViewCrudHQ)">
+            <summary>
+            Update HQ
+            </summary>
+            <param name="view">View HQ</param>
+            <response code="200">Return message: 
+            HQ06 - Update HQ success.</response>
+            <response code="400">Return error code:<br />
+            HQ02 - Name invalid.<br />
+            HQ03 - Company invalid. <br />
+            HQ05 - Id not found.</response>
+        </member>
+        <member name="M:TestPlooms.Api.Controllers.HQController.Get(System.Int32)">
+            <summary>
+            Get HQ to id
+            </summary>
+            <param name="id">Identifier HQ</param>
+            <response code="200">Return information.</response>
+            <response code="400">Return error code.</response>
+        </member>
+        <member name="M:TestPlooms.Api.Controllers.HQController.Delete(System.Int32)">
+            <summary>
+            Delete HQ to id
+            </summary>
+            <param name="id">Identifier HQ</param>
+            <response code="200">Return message:
+            HQ01 - Deleted HQ success.</response>
+            <response code="400">Return error code.</response>
+        </member>
+        <member name="M:TestPlooms.Api.Controllers.HQController.Get(System.Int32,System.Int32,System.String)">
+            <summary>
+            List HQs
+            </summary>
+            <param name="filter">Filter name HQ (optional)</param>
+            <param name="page">Page to list (optional - Default: 1)</param>
+            <param name="pageSize">Page size to list (optional - Default: 10)</param>
+            <response code="200">Return information.</response>
+            <response code="400">Return error code.</response>
+        </member>
+        <member name="T:TestPlooms.Api.Controllers.UserController">
+            <summary>
+            Controller user
+            </summary>
+        </member>
+        <member name="M:TestPlooms.Api.Controllers.UserController.#ctor(TestPloomes.Core.Interfaces.IServiceUser,Microsoft.AspNetCore.Http.IHttpContextAccessor)">
+            <summary>
+            Construtor controller
+            </summary>
+            <param name="_service">Service user</param>
+            <param name="contextAccessor">Token infomartion</param>
+        </member>
+        <member name="M:TestPlooms.Api.Controllers.UserController.New(TestPloomes.Views.BusinessCrud.ViewCrudUser)">
+            <summary>
+            New User
+            </summary>
+            <param name="view">View user</param>
+            <response code="200">Return message: 
+            USER05 - New user success.</response>
+            <response code="400">Return error code:<br />
+            USER02 - Name invalid.<br />
+            USER03 - Mail invalid.<br />
+            USER04 - Password invalid.</response>
+        </member>
+        <member name="M:TestPlooms.Api.Controllers.UserController.Update(TestPloomes.Views.BusinessCrud.ViewCrudUser)">
+            <summary>
+            Update User
+            </summary>
+            <param name="view">View user</param>
+            <response code="200">Return message: 
+            USER07 - Update user success.</response>
+            <response code="400">Return error code:<br />
+            USER02 - Name invalid.<br />
+            USER03 - Mail invalid.<br />
+            USER04 - Password invalid.<br />
+            USER06 - Id not found.</response>
+        </member>
+        <member name="M:TestPlooms.Api.Controllers.UserController.Get(System.Int32)">
+            <summary>
+            Get User to id
+            </summary>
+            <param name="id">Identifier user</param>
+            <response code="200">Return information.</response>
+            <response code="400">Return error code.</response>
+        </member>
+        <member name="M:TestPlooms.Api.Controllers.UserController.Delete(System.Int32)">
+            <summary>
+            Delete User to id
+            </summary>
+            <param name="id">Identifier user</param>
+            <response code="200">Return message:
+            USER01 - Deleted user success.</response>
+            <response code="400">Return error code.</response>
+        </member>
+        <member name="M:TestPlooms.Api.Controllers.UserController.Get(System.Int32,System.Int32,System.String)">
+            <summary>
+            List Users
+            </summary>
+            <param name="filter">Filter name user (optional)</param>
+            <param name="page">Page to list (optional - Default: 1)</param>
+            <param name="pageSize">Page size to list (optional - Default: 10)</param>
+            <response code="200">Return information.</response>
+            <response code="400">Return error code.</response>
+        </member>
+        <member name="T:TestPloomes.Api.Startup">
+            <summary>
+            Controle de inicialização da API
+            </summary>
+        </member>
+        <member name="M:TestPloomes.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Construtor do controle
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:TestPloomes.Api.Startup.Configuration">
+            <summary>
+            Propriedade de configuração
+            </summary>
+        </member>
+        <member name="M:TestPloomes.Api.Startup.RegistreServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registrador de serviços
+            </summary>
+            <param name="services">Coleção de serviços</param>
+        </member>
+        <member name="M:TestPloomes.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configurador de servicos
+            </summary>
+            <param name="services">Coleção de serviços</param>
+        </member>
+        <member name="M:TestPloomes.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Configuração de aplicação
+            </summary>
+            <param name="app">Aplicação</param>
+        </member>
+    </members>
+</doc>
